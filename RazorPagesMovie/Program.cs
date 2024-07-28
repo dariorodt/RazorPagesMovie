@@ -12,7 +12,8 @@ builder.Services.AddRazorPages()
         options.HtmlHelperOptions.ClientValidationEnabled = false;
     });
 builder.Services.AddDbContext<RazorPagesMovieContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("RazorPagesMovieContext") ?? throw new InvalidOperationException("Connection string 'RazorPagesMovieContext' not found.")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SQLExpressContext") ?? 
+        throw new InvalidOperationException("Connection string 'SQLExpressContext' not found.")));
 
 var app = builder.Build();
 
